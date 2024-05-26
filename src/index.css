@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(33, 33, 33);
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  height: 100vh; /* Ensure the body takes the full viewport height */
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  padding: 10px;
+  width: 250px;
+  background-color: rgb(23, 23, 23);
+  height: 100vh;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+svg {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.sidebar-nav {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar {
+  transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar.visible {
+  transform: translateX(0);
+}
+
+.chats {
+  margin-top: auto;
+  display: block;
+}
+
+.recent-heading {
+  padding: 10px;
+}
+
+.menu p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.menu-item p {
+  font-size: 14px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem;
+  padding: 10px 10px;
+}
+
+.menu-item:hover {
+  background-color: rgb(33, 33, 33);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.bottom-nav {
+  color: white;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem;
+  padding: 10px;
+}
+
+.upgrade-info {
+  font-size: 14px;
+}
+
+.bottom-nav:hover {
+  background-color: rgb(33, 33, 33);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.upgrade-description {
+  margin-top: 3px;
+  opacity: 0.5;
+  font-size: 11.5px;
+}
+
+.main-content {
+  flex: 1; /* Allow the main content to grow and occupy remaining space */
+  padding: 20px; /* Add padding as needed */
+  overflow: auto; /* Ensure that the content is scrollable if it exceeds the viewport height */
+  background-color: #f0f0f0; /* Add a background color for visibility */
+}
+
+/* Container for sidebar and main content */
+.app-container {
+  display: flex; /* Use flexbox for layout */
+  transition: margin-left 0.3s ease; /* Add transition for smooth animation */
+}
+
+.container.collapsed {
+  margin-left: 0; /* Collapse the margin when sidebar is hidden */
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.title p {
+  font-weight: 500;
+}
+
+.nav-bar-left {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.search-box input {
+  background-color: rgb(47, 47, 47);
+  border: 0;
+  width: 750px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.search-box:focus .search-box > p {
+  display: block;
+}
+
+.wrapper {
+  align-items: center;
+  background-color: rgb(47, 47, 47);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px;
+  /* Adjust the width as needed */
+}
+
+.search-box svg {
+  background-color: rgb(47, 47, 47);
+}
+.list-menu {
+  margin: 0 400px;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth scroll;
+  height: calc(100vh - 17rem);
+  scroll-behavior: none;
+}
+
+.question {
+  background-color: rgb(47, 47, 47);
+  padding: 15px;
+  border-radius: 30px;
+  width: fit-content;
+  float: right;
+  margin-top: 30px;
+}
+
+.answer p {
+  font-size: 15px;
+}
+
+.answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: fit-content;
+  float: left;
+  line-break: strict;
+  margin-top: 20px;
+  line-height: 160%;
+}
